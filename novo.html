@@ -1,0 +1,26 @@
+{% extends "template.html" %} {#  para evitar código duplicado#}
+{% block conteudo %}
+      <form action="{{ url_for('criar') }}" method="post"> {# para trocar de get para post, para as infos nao ficarem salvas no navegador #}
+        <fieldset>
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="categoria">Categoria</label>
+            <input type="text" id="categoria" name="categoria" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="console">Console</label>
+            <select id="console" name="console">
+              <option value="">Escolha uma plataforma de jogos</option>
+              <option value="XBox">Xbox Series</option>
+              <option value="Playstation 5">PS5</option>
+              <option value="Nintendo Switch">Nintendo Switch</option>
+              <option value="PC">PC Gaming</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-salvar">Salvar</button>
+        </fieldset>
+      </form>
+{% endblock %}
